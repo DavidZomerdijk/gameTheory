@@ -49,9 +49,8 @@ def findMixed(m):
 
     #row indifferent when:
     q = solve(m[0][0][0]* x  + m[0][1][0] *( 1 - x) - ( m[1][0][0]* x + m[1][1][0]*(1-x)), x)[0]
-
     #underneath we print the solutions.
-    if p not in [0,1] and q not in [0,1]:
+    if p not in [0,1, -1] and q not in [0,1, -1]:
         print("The mixed equilibrium is: (("  + str(p)  + ", " + str(1- p) + "), (" + str(q) + ", " + str(1-q) +"))")
     #in the case either p or q is 1 or 0 we know that there is a range of NE. These are printed below.
     else:
@@ -69,8 +68,7 @@ def findMixed(m):
             print("Where p is in [" + str(p)+", 1].")
         #in case we find a pure nash equilibrium we just print int as well.
         else:
-            print("The mixed equilibrium turns out to be a pure NE: ((" + str(p) + ", " + str(1 - p) + "), (" + str(q) + ", " + str(
-                1 - q) + "))")
+            print("There doesn't seem to exist a mixed equilibrium")
 
 #This function takes a matrix and prints the pay-off matrix and finds alls NE's.
 def findAllNash(matrix,name="Example") :
@@ -105,6 +103,11 @@ if __name__ == "__main__":
                [ (3, 4), (5, 3)]]
 
     findAllNash(example4, "example4")
+
+    example6 = [[(-10, -10), (-25, 0)],
+                [(0, -25), (-20, -20)]]
+
+    findAllNash(example6, "Prisoner’s Dilemma")
 
 
 
