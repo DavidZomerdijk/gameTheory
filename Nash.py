@@ -103,7 +103,12 @@ if __name__ == "__main__":
                [ (3, 4), (5, 3)]]
 
     findAllNash(example4, "example4")
+    ## game of chicken example
+    example5 = [[(0, 0), (-1, 1)],
+                [(1, -1), (-2, -2)]]
 
+    findAllNash(example5, "game of chicken")
+    ## Prisoner’s Dilemma example
     example6 = [[(-10, -10), (-25, 0)],
                 [(0, -25), (-20, -20)]]
 
